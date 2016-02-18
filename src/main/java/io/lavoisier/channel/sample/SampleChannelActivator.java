@@ -36,7 +36,9 @@ public class SampleChannelActivator implements BundleActivator {
         if (ref != null) {
             LogService logService = (LogService) context.getService(ref);
             logService.log(LogService.LOG_INFO, "SampleChannelActivator");
-            serviceRegistration = context.registerService(Channel.class.getName(), new SampleChannel(logService), new Properties());
+            Properties props = new Properties();
+            props.put("id", "io.lavoisier.channel.sample");
+            serviceRegistration = context.registerService(Channel.class.getName(), new SampleChannel(logService), props);
         }
     }
 

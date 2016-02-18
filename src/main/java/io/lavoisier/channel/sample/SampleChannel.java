@@ -29,11 +29,9 @@ public class SampleChannel implements Channel {
 
     public SampleChannel(LogService logService) {
         this.logService = logService;
-        logService.log(LogService.LOG_INFO, "SampleChannel initialized");
     }
 
     public InputStream getDescriptor() {
-        logService.log(LogService.LOG_INFO, "getDescriptor called");
-        return null;
+        return getClass().getClassLoader().getResourceAsStream("channel.xml");
     }
 }
