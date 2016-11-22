@@ -17,17 +17,27 @@
   ~ limitations under the License.
   -->
 
-<channel xmlns="http://www.lavoisier.io" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lavoisier.io channel.xsd">
+<channelDescriptor xmlns="http://www.lavoisier.io" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lavoisier.io channel.xsd">
     <id>io.lavoisier.channel.sample</id>
     <name>Sample</name>
     <description>Sample Channel</description>
     <version>0.0.1</version>
     <globalActivationParameters>
+
     </globalActivationParameters>
     <userActivationParameters>
+
     </userActivationParameters>
-    <triggers>
-    </triggers>
+    <sparks>
+
+    </sparks>
+    <conditions>
+
+    </conditions>
+    <fuels>
+
+    </fuels>
     <actions>
+
     </actions>
-</channel>
+</channelDescriptor>

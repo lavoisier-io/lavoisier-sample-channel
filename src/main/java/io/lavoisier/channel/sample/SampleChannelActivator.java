@@ -18,14 +18,17 @@
 
 package io.lavoisier.channel.sample;
 
-import io.lavoisier.api.Channel;
+import java.util.Dictionary;
+import java.util.Hashtable;
+
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
 import org.osgi.service.log.LogService;
 
-import java.util.Properties;
+import io.lavoisier.channel.api.Channel;
+
 
 public class SampleChannelActivator implements BundleActivator {
 
@@ -36,7 +39,7 @@ public class SampleChannelActivator implements BundleActivator {
         if (ref != null) {
             LogService logService = (LogService) context.getService(ref);
             logService.log(LogService.LOG_INFO, "SampleChannelActivator");
-            Properties props = new Properties();
+            Dictionary<String, String> props = new Hashtable<>();
             props.put("id", "io.lavoisier.channel.sample");
             serviceRegistration = context.registerService(Channel.class.getName(), new SampleChannel(logService), props);
         }

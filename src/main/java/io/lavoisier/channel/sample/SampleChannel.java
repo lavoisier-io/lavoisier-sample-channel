@@ -18,10 +18,14 @@
 
 package io.lavoisier.channel.sample;
 
-import io.lavoisier.api.Channel;
+import java.io.InputStream;
+import java.util.Collections;
+import java.util.Map;
+
 import org.osgi.service.log.LogService;
 
-import java.io.InputStream;
+import io.lavoisier.channel.api.*;
+
 
 public class SampleChannel implements Channel {
 
@@ -31,7 +35,28 @@ public class SampleChannel implements Channel {
         this.logService = logService;
     }
 
+    @Override
     public InputStream getDescriptor() {
         return getClass().getClassLoader().getResourceAsStream("channel.xml");
+    }
+
+    @Override
+    public Map<String, Spark> getSparks() {
+        return Collections.emptyMap();
+    }
+
+    @Override
+    public Map<String, Condition> getConditions() {
+        return Collections.emptyMap();
+    }
+
+    @Override
+    public Map<String, Fuel> getFuels() {
+        return Collections.emptyMap();
+    }
+
+    @Override
+    public Map<String, Action> getActions() {
+        return Collections.emptyMap();
     }
 }
